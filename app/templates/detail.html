@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ task["name"] }}{% endblock title %}
+
+{% block content %}
+<h1>Name: {{ task["name"] }}</h1>
+<h3>Summary: {{ task["summary"] }}</h3>
+<p>Description: {{ task["description"] }}</p>
+
+<a class="btn btn-primary" href="{{ url_for('edit_task', pk=task['id']) }}" class="card-link">Edit</a>
+<a class="btn btn-danger" href="{{ url_for('delete_task', pk=task['id']) }}" class="card-link">Delete</a>
+{% endblock content %}
